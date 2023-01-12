@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { checkToken } = require("../../auth/token_validation");
 
 const {
   createUser,
@@ -9,12 +10,12 @@ const {
   updateUsers,
   deleteUser
 } = require("./mentor.controller");
-router.get("/",  getUsers);
-router.get("/:area",  getUsersFromAOE);
+router.get("/", checkToken, getUsers);
+router.get("/:area",checkToken,  getUsersFromAOE);
 router.post("/", createUser);
-router.get("/:id",  getUserByUserId);
+router.get("/:id", checkToken, getUserByUserId);
 router.post("/login", login);
-router.patch("/",  updateUsers);
-router.delete("/",  deleteUser);
+router.patch("/", checkToken, updateUsers);
+router.delete("/",checkToken,  deleteUser);
 
 module.exports = router;

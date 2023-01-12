@@ -22,7 +22,7 @@ module.exports = {
   },
   getUserByUserEmail: (email, callBack) => {
     pool.query(
-      `select id,firstName,lastName,gender,email from student where email = ?`,
+      `select * from student where email = ?`,
       [email],
       (error, results, fields) => {
         if (error) {
