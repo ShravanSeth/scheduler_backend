@@ -11,7 +11,7 @@ const {
   deleteUser
 } = require("./mentor.controller");
 router.get("/", checkToken, getUsers);
-router.get("/:area",checkToken,  getUsersFromAOE);
+router.get("/?area=:area",checkToken, getUsersFromAOE);
 router.post("/", createUser);
 router.get("/:id", checkToken, getUserByUserId);
 router.post("/login", login);
