@@ -10,7 +10,7 @@ const connectRouter = require("./api/connection/connect.router");
 
 
 app.use(cors({
-   origin: "https://google.com", 
+   origin: "https://careercarve.netlify.app", 
    credentials: true,
    methods: "GET,POST,PUT,DELETE",
 }))
